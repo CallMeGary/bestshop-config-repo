@@ -1,0 +1,9 @@
+security:
+  basic:
+    enabled: false
+spring:
+  cloud:
+    config:
+      server:
+        health:
+          enabled: false
