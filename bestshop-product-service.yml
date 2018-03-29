@@ -1,0 +1,10 @@
+security:
+  basic:
+    enabled: false
+
+spring:
+  data:
+    mongodb:
+      database: bestshop
+      host: localhost
+      port: 27017
