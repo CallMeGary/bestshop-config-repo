@@ -26,11 +26,6 @@ logging:
     file: /var/log/containers/backend-application.log
     level.org.springframework: 'INFO'
 
-# Disabling config server health check on clients to circumvent some constraints troubleshooting INC-109935
-health:
-  config:
-    enabled: false
-
 spring:
   jackson:
     default-property-inclusion: non_null
