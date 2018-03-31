@@ -27,6 +27,9 @@ logging:
     level.org.springframework: 'INFO'
 
 spring:
+  rabbitmq:
+    host: localhost
+
   jackson:
     default-property-inclusion: non_null
     serialization:

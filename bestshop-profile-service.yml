@@ -4,6 +4,38 @@ server:
 spring:
   data:
     mongodb:
-      database: bestshop
+      database: ${spring.application.name}
       host: localhost
       port: 27017
+
+  cloud:
+    stream:
+      bindings:
+
+        profileCreatedOutput:
+          destination: profile.created
+          contentType: application/json
+        profileUpdatedOutput:
+          destination: profile.updated
+          contentType: application/json
+        profileDeletedOutput:
+          destination: profile.deleted
+          contentType: application/json
+
+        profileCreatedInput:
+          group: ${spring.application.name}
+          destination: profile.created
+          consumer.maxAttempts: 3
+        profileUpdatedInput:
+          group: ${spring.application.name}
+          destination: profile.updated
+          consumer.maxAttempts: 3
+        profileDeletedInput:
+          group: ${spring.application.name}
+          destination: profile.deleted
+          consumer.maxAttempts: 3
+
+        orderCompletedInput:
+          group: ${spring.application.name}
+          destination: order.completed
+          consumer.maxAttempts: 3
