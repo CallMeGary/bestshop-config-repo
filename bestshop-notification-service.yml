@@ -1,0 +1,51 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+
+        profileCreatedInput:
+          group: ${spring.application.name}
+          destination: profile.created
+          consumer.maxAttempts: 3
+        profileUpdatedInput:
+          group: ${spring.application.name}
+          destination: profile.updated
+          consumer.maxAttempts: 3
+        profileDeletedInput:
+          group: ${spring.application.name}
+          destination: profile.deleted
+          consumer.maxAttempts: 3
+
+        productCreatedInput:
+          group: ${spring.application.name}
+          destination: product.created
+          consumer.maxAttempts: 3
+        productUpdatedInput:
+          group: ${spring.application.name}
+          destination: product.updated
+          consumer.maxAttempts: 3
+        productDeletedInput:
+          group: ${spring.application.name}
+          destination: product.deleted
+          consumer.maxAttempts: 3
+        productReviewAddedInput:
+          group: ${spring.application.name}
+          destination: product.reviewAdded
+          consumer.maxAttempts: 3
+
+        orderCreatedInput:
+          group: ${spring.application.name}
+          destination: order.created
+          consumer.maxAttempts: 3
+        orderCancelledInput:
+          group: ${spring.application.name}
+          destination: order.cancelled
+          consumer.maxAttempts: 3
+        orderDeliveredInput:
+          group: ${spring.application.name}
+          destination: order.delivered
+          consumer.maxAttempts: 3
+        orderCompletedInput:
+          group: ${spring.application.name}
+          destination: order.completed
+          consumer.maxAttempts: 3
